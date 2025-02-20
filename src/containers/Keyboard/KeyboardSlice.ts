@@ -15,8 +15,7 @@ export const KeyboardSlice = createSlice({
     add: (state, action: PayloadAction<string>) => {
       if (state.value.length === 4) return
       state.value += action.payload;
-      console.log(state.value)
-    },
+      },
     remove: (state) => {
       state.value = state.value.slice(0, state.value.length - 1);
     },
