@@ -16,9 +16,12 @@ export const KeyboardSlice = createSlice({
       if (state.value.length === 4) return
       state.value += action.payload;
       console.log(state.value)
+    },
+    remove: (state) => {
+      state.value = state.value.slice(0, state.value.length - 1);
     }
   }
 });
 
 export const keyboardReducer = KeyboardSlice.reducer;
-export const { add } = KeyboardSlice.actions;
+export const { add, remove  } = KeyboardSlice.actions;

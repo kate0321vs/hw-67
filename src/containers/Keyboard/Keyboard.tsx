@@ -1,7 +1,7 @@
 import "./Keyboard.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../app/store.ts';
-import { add } from './KeyboardSlice.ts';
+import { add, remove } from './KeyboardSlice.ts';
 
 const Keyboard = () => {
   const keys = ['1','2','3','4','5','6','7','8','9'];
@@ -13,8 +13,12 @@ const Keyboard = () => {
       <div className="pin-display"> { keyboardValue } </div>
       <div className="keyboard">
         {keys.map(key => (
-           <button key={key} onClick={() => dispatch(add(key))}  className="key">{key}</button>
-          ))}
+          <button key={key} onClick={() => dispatch(add(key))} className="key">{key}</button>
+        ))}
+        <button className="key" onClick={() => dispatch(remove())}>←</button>
+        <button className="key" onClick={() => dispatch(add('0'))}>0</button>
+        <button className="key">E</button>
+
       </div>
     </div>
   );
