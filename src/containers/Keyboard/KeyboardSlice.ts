@@ -19,9 +19,17 @@ export const KeyboardSlice = createSlice({
     },
     remove: (state) => {
       state.value = state.value.slice(0, state.value.length - 1);
+    },
+    check: (state) => {
+      const pinCode = '2835';
+      if (state.value === pinCode) {
+        state.value = 'Access Granted!';
+      } else {
+        state.value = 'Access Denied!';
+      }
     }
   }
 });
 
 export const keyboardReducer = KeyboardSlice.reducer;
-export const { add, remove  } = KeyboardSlice.actions;
+export const { add, remove, check  } = KeyboardSlice.actions;
