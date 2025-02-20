@@ -1,9 +1,11 @@
+import Keyboard from './containers/Keyboard/Keyboard.tsx';
+import "./App.css"
 
 const App = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      <Keyboard/>
+    </>
   );
 };
 
